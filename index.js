@@ -3,7 +3,6 @@ const restify = require("restify");
 const corsMiddleware = require("restify-cors-middleware");
 
 const cors = corsMiddleware({
-  preflightMaxAge: 5, //Optional
   origins: ["*"]
 });
 
