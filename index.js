@@ -1,5 +1,11 @@
 const cities = require("all-the-cities");
 const restify = require("restify");
+const corsMiddleware = require("restify-cors-middleware");
+
+const cors = corsMiddleware({
+  preflightMaxAge: 5, //Optional
+  origins: ["*"]
+});
 
 function getCity(req, res, next) {
   const city = cities[Math.floor(Math.random() * cities.length)];
@@ -8,6 +14,8 @@ function getCity(req, res, next) {
 }
 
 const server = restify.createServer();
+server.pre(cors.preflight);
+server.use(cors.actual);
 server.get("/city", getCity);
 
 server.listen(8080, function() {
