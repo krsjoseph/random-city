@@ -1,0 +1,24 @@
+{
+  "name": "random-city",
+  "version": "1.0.0",
+  "description": "Get a random city and it's ",
+  "main": "index.js",
+  "repository": "https://github.com/krsjoseph/random-city",
+  "author": "Krs Joseph",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "micro-dev"
+  },
+  "dependencies": {
+    "all-the-cities": "^2.0.1",
+    "micro": "^9.3.3",
+    "restify": "^7.2.1"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  },
+  "engines": {
+    "node": "^8.11.3"
+  }
+}
